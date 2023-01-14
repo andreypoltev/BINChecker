@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="@string/first_digits_of_a_card_number_bin_iin"
+        android:inputType="number"
+        android:maxLength="8"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/listViewRecentHistory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <ListView
+        android:id="@+id/listViewRecentHistory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/listViewRecentHistory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <TextView
+        android:id="@+id/textViewLENGTH"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|end"
+        android:text="NUMBER LENGTH: "
+
+        app:layout_constraintBottom_toTopOf="@+id/textViewLUHN"
+        app:layout_constraintEnd_toStartOf="@+id/textView_numberLength"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCARD" />
+
+    <TextView
+        android:id="@+id/textView_numberLength"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|start"
+        android:text="_numberLength"
+
+        app:layout_constraintBottom_toBottomOf="@+id/textViewLENGTH"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLENGTH"
+        app:layout_constraintTop_toTopOf="@+id/textViewLENGTH" />
+
+    <TextView
+        android:id="@+id/textView_numberLuhn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|start"
+        android:text="_luhn"
+
+        app:layout_constraintBottom_toBottomOf="@+id/textViewLUHN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLUHN"
+        app:layout_constraintTop_toTopOf="@+id/textViewLUHN" />
+
+    <TextView
+        android:id="@+id/textView_scheme"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|start"
+        android:text="_scheme"
+
+        app:layout_constraintBottom_toBottomOf="@+id/textViewNETWORK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewNETWORK"
+        app:layout_constraintTop_toTopOf="@+id/textViewNETWORK" />
+
+    <TextView
+        android:id="@+id/textView_brand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|start"
+        android:text="_brand"
+
+        app:layout_constraintBottom_toBottomOf="@+id/textViewBRAND"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewBRAND"
+        app:layout_constraintTop_toTopOf="@+id/textViewBRAND" />
+
+    <TextView
+        android:id="@+id/textView_prepaid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|start"
+        android:text="_prepaid"
+
+        app:layout_constraintBottom_toBottomOf="@+id/textViewPREPAID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewPREPAID"
+        app:layout_constraintTop_toTopOf="@+id/textViewPREPAID" />
+
+    <TextView
+        android:id="@+id/textView_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|start"
+        android:text="_type"
+
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTYPE"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewTYPE"
+        app:layout_constraintTop_toTopOf="@+id/textViewTYPE" />
+
+    <TextView
+        android:id="@+id/textView_countryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:linksClickable="false"
+        android:text="countryName"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_countryAlpha2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="alpha2"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCOUNTRY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewCOUNTRY"
+        app:layout_constraintTop_toTopOf="@+id/textViewCOUNTRY" />
+
+    <TextView
+        android:id="@+id/textView_countryEmoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="emoji"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCOUNTRY"
+        app:layout_constraintEnd_toStartOf="@+id/textViewCOUNTRY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewCOUNTRY" />
+
+    <TextView
+        android:id="@+id/textView_bankName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="bankName"
+
+
+        app:layout_constraintBottom_toTopOf="@+id/textView_bankUrl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBANK" />
+
+    <TextView
+        android:id="@+id/textView_bankUrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:gravity="center"
+        android:text="bankWebSite"
+
+        android:textColorLink="@android:color/holo_orange_dark"
+
+
+        app:layout_constraintBottom_toTopOf="@+id/textView_bankPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_bankName" />
+
+    <TextView
+        android:id="@+id/textView_bankPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoLink="phone"
+        android:gravity="center|center_vertical"
+        android:text="bankPhone"
+
+        app:layout_constraintBottom_toTopOf="@+id/textView_bankCity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_bankUrl" />
+
+    <TextView
+        android:id="@+id/textView_bankCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="bankCity"
+
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_bankPhone" />
+
+    <TextView
+        android:id="@+id/textViewCountryNumeric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="countryNumeric"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_countryName"
+        app:layout_constraintEnd_toStartOf="@+id/textView_countryName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_countryName" />
+
+    <TextView
+        android:id="@+id/textViewCountryCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="countryCurrency"
+
+
+        app:layout_constraintBottom_toBottomOf="@+id/textView_countryName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView_countryName"
+        app:layout_constraintTop_toTopOf="@+id/textView_countryName" />
+
+    <TextView
+        android:id="@+id/textViewLUHN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|end"
+        android:text="LUHN: "
+
+        app:layout_constraintBottom_toTopOf="@+id/textViewNETWORK"
+        app:layout_constraintEnd_toStartOf="@+id/textView_numberLuhn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLENGTH" />
+
+    <TextView
+        android:id="@+id/textViewTYPE"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|end"
+        android:text="TYPE: "
+
+        app:layout_constraintBottom_toTopOf="@+id/textViewBRAND"
+        app:layout_constraintEnd_toStartOf="@+id/textView_type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNETWORK" />
+
+    <TextView
+        android:id="@+id/textViewBRAND"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|end"
+        android:text="BRAND: "
+
+        app:layout_constraintBottom_toTopOf="@+id/textViewPREPAID"
+        app:layout_constraintEnd_toStartOf="@+id/textView_brand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTYPE" />
+
+    <TextView
+        android:id="@+id/textViewBANK"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+
+        android:text="BANK"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView_bankName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLatitude" />
+
+    <TextView
+        android:id="@+id/textViewNETWORK"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|end"
+        android:text="SCHEME / NETWORK: "
+
+        app:layout_constraintBottom_toTopOf="@+id/textViewTYPE"
+        app:layout_constraintEnd_toStartOf="@+id/textView_scheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLUHN" />
+
+    <TextView
+        android:id="@+id/textViewPREPAID"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|end"
+        android:text="PREPAID: "
+
+        app:layout_constraintBottom_toTopOf="@+id/textViewCOUNTRY"
+        app:layout_constraintEnd_toStartOf="@+id/textView_prepaid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBRAND" />
+
+    <TextView
+        android:id="@+id/textViewCOUNTRY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="COUNTRY"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView_countryName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPREPAID" />
+
+    <TextView
+        android:id="@+id/textViewCARD"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|center_vertical"
+        android:text="CARD"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLENGTH"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+
+        android:id="@+id/textViewLatitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:gravity="right"
+        android:text="@string/latitude"
+        app:layout_constraintBottom_toTopOf="@id/textViewBANK"
+        app:layout_constraintEnd_toStartOf="@id/textViewCountryLatitude"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_countryName" />
+
+    <TextView
+        android:id="@+id/textViewCountryLatitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+
+        android:text="@string/countrylatitude"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewLatitude"
+        app:layout_constraintEnd_toStartOf="@id/textViewLongitude"
+        app:layout_constraintStart_toEndOf="@+id/textViewLatitude"
+        app:layout_constraintTop_toTopOf="@+id/textViewLatitude" />
+
+    <TextView
+        android:id="@+id/textViewCountryLongitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+
+        android:text="@string/countrylongitude"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewLatitude"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textViewLongitude"
+        app:layout_constraintTop_toTopOf="@+id/textViewLatitude" />
+
+    <TextView
+        android:id="@+id/textViewLongitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="@string/longitude"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewLatitude"
+        app:layout_constraintEnd_toStartOf="@id/textViewCountryLongitude"
+        app:layout_constraintStart_toEndOf="@id/textViewCountryLatitude"
+        app:layout_constraintTop_toTopOf="@+id/textViewLatitude" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

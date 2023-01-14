@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BINChecker</string>
+    <string name="first_digits_of_a_card_number_bin_iin">First digits of a card number (BIN/IIN)</string>
+    <string name="check">Check</string>
+    <string name="coordinates"><u>Coordinates:</u></string>
+    <string name="latitude"><u>Latitude:</u></string>
+    <string name="countrylatitude"><u>countryLatitude</u></string>
+    <string name="longitude"><u>Longitude:</u></string>
+    <string name="countrylongitude"><u>countryLongitude</u></string>
+</resources>
