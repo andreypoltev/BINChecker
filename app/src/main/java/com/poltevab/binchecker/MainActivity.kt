@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +37,8 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        //clearTextView()
+
         val requestHistory = getSharedPreferences("RequestHistory", Context.MODE_PRIVATE)
         binding.editText.setText(requestHistory.getString("lastCardNumber", ""))
 
@@ -48,13 +51,9 @@ class MainActivity : AppCompatActivity() {
         adapterRecentHistory = ArrayAdapter(this, android.R.layout.simple_list_item_1, listOfRecentRequests)
         listViewRecentHistory.adapter = adapterRecentHistory
 
-
-
         listViewRecentHistory.setOnItemClickListener { adapterView: AdapterView<*>, view2: View, i: Int, l: Long ->
             binding.editText.setText(listOfRecentRequests[i])
         }
-
-
 
         binding.button.setOnClickListener {
 
@@ -66,30 +65,20 @@ class MainActivity : AppCompatActivity() {
                         setTextViewValues(output)
                     refreshAdapter(listViewRecentHistory, adapterRecentHistory)
                 }
-            } else  {
+            } else {
                 Toast.makeText(this,"Enter card number.", Toast.LENGTH_SHORT).show()
             }
         }
 
-        binding.textViewLatitude.setOnClickListener { //выбивает нахой
+
+        binding.cardViewCountry.setOnClickListener {
+
             if (binding.textViewCountryLatitude != null && binding.textViewCountryLongitude != null) {
                 val uri: String = java.lang.String.format(Locale.ENGLISH, "geo:%f,%f", binding.textViewCountryLatitude.text.toString().toDouble(), binding.textViewCountryLongitude.text.toString().toDouble())
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
                 this.startActivity(intent)
             }
-
         }
-
-        binding.textViewLongitude.setOnClickListener { //выбивает нахой
-            if (binding.textViewCountryLatitude != null && binding.textViewCountryLongitude != null) {
-                val uri: String = java.lang.String.format(Locale.ENGLISH, "geo:%f,%f", binding.textViewCountryLatitude.text.toString().toDouble(), binding.textViewCountryLongitude.text.toString().toDouble())
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
-                this.startActivity(intent)
-            }
-
-        }
-
-
     }
 
     suspend fun refreshAdapter(listView: ListView, adapter: ArrayAdapter<String>) {
@@ -183,6 +172,7 @@ class MainActivity : AppCompatActivity() {
 
         withContext(Main) {
 
+
             if (parsedData.numberLength.toString() == "null")
                 binding.textViewNumberLength.text = "NO DATA"
             else
@@ -227,8 +217,8 @@ class MainActivity : AppCompatActivity() {
             else
                 binding.textViewPrepaid.text = "NO"
 
-            binding.textViewCountryNumeric.text = parsedData.countryNumeric
-            binding.textViewCountryAlpha2.text = parsedData.countryAlpha2
+//            binding.textViewCountryNumeric.text = parsedData.countryNumeric
+//            binding.textViewCountryAlpha2.text = parsedData.countryAlpha2
 
             if (parsedData.countryName.toString() == "null")
                 binding.textViewCountryName.text = "NO DATA"
@@ -236,7 +226,7 @@ class MainActivity : AppCompatActivity() {
                 binding.textViewCountryName.text = parsedData.countryName
 
             binding.textViewCountryEmoji.text = parsedData.countryEmoji
-            binding.textViewCountryCurrency.text = parsedData.countryCurrency
+//            binding.textViewCountryCurrency.text = parsedData.countryCurrency
 
             if (parsedData.countryLatitude.toString() == "null")
                 binding.textViewCountryLatitude.text = "NO DATA"
@@ -582,6 +572,26 @@ class MainActivity : AppCompatActivity() {
         return countryCodes[countryCode].toString()
     }
 
+    fun clearTextView() {
+        binding.textViewNumberLength.text = ""
+        binding.textViewNumberLuhn.text = ""
+        binding.textViewScheme.text = ""
+        binding.textViewType.text = ""
+        binding.textViewBrand.text = ""
+        binding.textViewPrepaid.text = ""
+        binding.textViewCountryEmoji.text = ""
+//        binding.textViewCountryAlpha2.text = ""
+//        binding.textViewCountryNumeric.text = ""
+//        binding.textViewCountryCurrency.text = ""
+        binding.textViewCountryName.text = ""
+        binding.textViewBankName.text = ""
+        binding.textViewBankUrl.text = ""
+        binding.textViewBankPhone.text = ""
+        binding.textViewBankCity.text = ""
+        binding.textViewCountryLatitude.text = ""
+        binding.textViewCountryLongitude.text = ""
+    }
+
     fun saveData() {
 
         val requestHistory = getSharedPreferences("RequestHistory", Context.MODE_PRIVATE)
@@ -590,6 +600,7 @@ class MainActivity : AppCompatActivity() {
         for (item in listOfRecentRequests)
             requestHistory.edit().putString("VALUE_${listOfRecentRequests.indexOf(item)}", item).apply()
     }
+
 
     override fun onPause(){
         super.onPause()
