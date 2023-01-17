@@ -33,9 +33,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
 
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
+                android:layout_margin="4dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -44,7 +44,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
 
-                    android:layout_margin="15dp">
+                    android:layout_margin="8dp">
 
                     <TextView
                         android:id="@+id/textViewSCHEME"
@@ -73,18 +73,18 @@
                 app:layout_constraintTop_toTopOf="parent"
 
 
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
+                android:layout_margin="4dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:orientation="vertical"
-
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15dp">
+
+                    android:layout_margin="8dp">
 
                     <TextView
                         android:id="@+id/textViewBRAND"
@@ -111,18 +111,18 @@
                 app:layout_constraintStart_toEndOf="@id/cardViewBrand"
                 app:layout_constraintTop_toTopOf="parent"
 
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
+                android:layout_margin="4dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
 
-                    android:layout_margin="15dp">
+                    android:layout_margin="8dp">
 
                     <TextView
                         android:id="@+id/textViewTYPE"
@@ -148,18 +148,18 @@
                 app:layout_constraintStart_toEndOf="@id/cardViewType"
                 app:layout_constraintTop_toTopOf="parent"
 
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
+                android:layout_margin="4dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
 
-                    android:layout_margin="15dp">
+                    android:layout_margin="8dp">
 
                     <TextView
                         android:id="@+id/textViewPREPAID"
@@ -201,18 +201,17 @@
                 app:layout_constraintTop_toTopOf="parent"
 
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_margin="6dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">>
+                app:cardElevation="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:orientation="vertical"
-
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15dp"
-                    >
+
+                    android:layout_margin="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -237,7 +236,6 @@
                             <androidx.appcompat.widget.LinearLayoutCompat
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_gravity="center"
                                 android:orientation="vertical">
 
                                 <TextView
@@ -309,16 +307,16 @@
 
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
+                android:layout_margin="4dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:orientation="vertical"
-
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15dp">
+
+                    android:layout_margin="8dp">
 
                     <TextView
                         android:id="@+id/textViewCOUNTRY"
@@ -335,6 +333,7 @@
                             android:id="@+id/textView_countryEmoji"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
 
                             android:text="emoji" />
 
@@ -413,19 +412,16 @@
 
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
-                android:layout_marginEnd="293dp"
-                android:layout_marginBottom="54dp"
+                android:layout_margin="4dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="4dp"
-                >
+                app:cardElevation="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:layout_margin="15dp"
-                    android:orientation="vertical">
+
+                    android:layout_margin="8dp">
 
                     <TextView
                         android:id="@+id/textViewBANK"
