@@ -31,20 +31,26 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
         setContentView(R.layout.activity_main)
 
         binding = inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        clearTextView()
 
-        //clearTextView()
+
+
+
 
         val requestHistory = getSharedPreferences("RequestHistory", Context.MODE_PRIVATE)
         binding.editText.setText(requestHistory.getString("lastCardNumber", ""))
 
 
 
-        for (i in 0..4 )
+        for (i in 0..3 )
             requestHistory.getString("VALUE_$i", "")?.let { listOfRecentRequests.add(it) }
 
         val listViewRecentHistory = findViewById<ListView>(R.id.listViewRecentHistory)
