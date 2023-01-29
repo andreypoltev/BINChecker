@@ -6,45 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-
-        android:id="@+id/constraintLayout"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/gridLayout"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout0"
-            android:layout_width="0dp"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/constraintLayout1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:orientation="horizontal">
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
 
                 android:id="@+id/cardViewScheme"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/cardViewBrand"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
 
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="8dp"
 
-                    android:layout_margin="8dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textViewSCHEME"
@@ -63,28 +55,22 @@
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewBrand"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/cardViewType"
-                app:layout_constraintStart_toEndOf="@id/cardViewScheme"
-                app:layout_constraintTop_toTopOf="parent"
 
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="8dp"
 
-                    android:layout_margin="8dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textViewBRAND"
@@ -102,27 +88,21 @@
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewType"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/cardViewPrepaid"
-                app:layout_constraintStart_toEndOf="@id/cardViewBrand"
-                app:layout_constraintTop_toTopOf="parent"
+            <com.google.android.material.card.MaterialCardView
 
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="8dp"
 
-                    android:layout_margin="8dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textViewTYPE"
@@ -139,27 +119,22 @@
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewPrepaid"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/cardViewType"
-                app:layout_constraintTop_toTopOf="parent"
 
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="8dp"
 
-                    android:layout_margin="8dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textViewPREPAID"
@@ -178,40 +153,30 @@
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout1"
-            android:layout_width="0dp"
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/constraintLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/constraintLayout0">
+            android:orientation="horizontal">
 
-
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewCardNumber"
 
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/cardViewCountry"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
 
-                    android:layout_margin="8dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -219,23 +184,20 @@
                         android:layout_margin="4dp"
                         android:text="CARD NUMBER" />
 
-                    <GridLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:columnCount="2"
-                        android:rowCount="1">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_row="0"
-                            android:layout_column="0"
-
-                            android:layout_margin="4dp"
-                            app:cardBackgroundColor="@android:color/transparent"
-                            app:cardElevation="0dp">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="4dp">
 
                             <androidx.appcompat.widget.LinearLayoutCompat
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:layout_margin="8dp"
                                 android:orientation="vertical">
 
                                 <TextView
@@ -255,19 +217,18 @@
                             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                        </androidx.cardview.widget.CardView>
+                        </com.google.android.material.card.MaterialCardView>
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_row="0"
-                            android:layout_column="1"
-
-                            android:layout_margin="4dp"
-                            app:cardBackgroundColor="@android:color/transparent"
-                            app:cardElevation="0dp">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="4dp">
 
                             <androidx.appcompat.widget.LinearLayoutCompat
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:layout_margin="8dp"
                                 android:orientation="vertical">
 
                                 <TextView
@@ -287,36 +248,31 @@
                             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                        </androidx.cardview.widget.CardView>
+                        </com.google.android.material.card.MaterialCardView>
 
 
-                    </GridLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
 
                 android:id="@+id/cardViewCountry"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/cardViewCardNumber"
-                app:layout_constraintTop_toTopOf="parent"
 
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="8dp"
 
-                    android:layout_margin="8dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textViewCOUNTRY"
@@ -387,41 +343,30 @@
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
 
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
-            android:layout_width="0dp"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/constraintLayout1">
+            android:orientation="horizontal">
 
-
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardViewBank"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
 
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="8dp"
 
-                    android:layout_margin="8dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textViewBANK"
@@ -464,15 +409,12 @@
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
 
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <EditText
         android:id="@+id/editText"
@@ -483,7 +425,7 @@
         android:inputType="number"
         android:maxLength="8"
         android:minHeight="48dp"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
         app:layout_constraintBottom_toTopOf="@id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -493,18 +435,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/check"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/listViewRecentHistory"
+        app:layout_constraintTop_toBottomOf="@id/editText"
+        app:layout_constraintBottom_toTopOf="@id/listViewRecentHistory"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <ListView
         android:id="@+id/listViewRecentHistory"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

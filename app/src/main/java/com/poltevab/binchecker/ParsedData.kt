@@ -20,6 +20,5 @@ data class ParsedData (
     val bankName: String?,
     val bankUrl: String?,
     val bankPhone: String?,
-    val bankCity: String?,
-
-        )
+    val bankCity: String?
+)

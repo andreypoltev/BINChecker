@@ -7,4 +7,6 @@
     <string name="countrylatitude"><u>countryLatitude</u></string>
     <string name="longitude"><u>Longitude: </u></string>
     <string name="countrylongitude"><u>countryLongitude</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

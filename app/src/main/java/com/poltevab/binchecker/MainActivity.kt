@@ -4,21 +4,24 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.poltevab.binchecker.databinding.ActivityMainBinding
-import com.poltevab.binchecker.databinding.ActivityMainBinding.inflate
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeout
 import org.json.JSONObject
 import java.io.FileNotFoundException
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,33 +34,21 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-
-
-        setContentView(R.layout.activity_main)
-
-        binding = inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
         clearTextView()
-
-
-
-
 
         val requestHistory = getSharedPreferences("RequestHistory", Context.MODE_PRIVATE)
         binding.editText.setText(requestHistory.getString("lastCardNumber", ""))
 
-
-
-        for (i in 0..3 )
+        for (i in 0..10 )
             requestHistory.getString("VALUE_$i", "")?.let { listOfRecentRequests.add(it) }
 
-        val listViewRecentHistory = findViewById<ListView>(R.id.listViewRecentHistory)
         adapterRecentHistory = ArrayAdapter(this, android.R.layout.simple_list_item_1, listOfRecentRequests)
-        listViewRecentHistory.adapter = adapterRecentHistory
+        binding.listViewRecentHistory.adapter = adapterRecentHistory
 
-        listViewRecentHistory.setOnItemClickListener { adapterView: AdapterView<*>, view2: View, i: Int, l: Long ->
+        binding.listViewRecentHistory.setOnItemClickListener { adapterView: AdapterView<*>, view2: View, i: Int, l: Long ->
             binding.editText.setText(listOfRecentRequests[i])
         }
 
@@ -69,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                     val output = getOutput(cardNumber)
                     if (output != null)
                         setTextViewValues(output)
-                    refreshAdapter(listViewRecentHistory, adapterRecentHistory)
+                    refreshRequestHistory(binding.listViewRecentHistory, adapterRecentHistory)
                 }
             } else {
                 Toast.makeText(this,"Enter card number.", Toast.LENGTH_SHORT).show()
@@ -87,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    suspend fun refreshAdapter(listView: ListView, adapter: ArrayAdapter<String>) {
+    suspend fun refreshRequestHistory(listView: ListView, adapter: ArrayAdapter<String>) {
 
         if (binding.editText.text.toString() != listOfRecentRequests[0]) {
 
@@ -136,6 +127,7 @@ class MainActivity : AppCompatActivity() {
         var fetchedData: String
         val connection: HttpURLConnection
 
+
         withContext(IO) {
             connection = url.openConnection() as HttpURLConnection
         }
@@ -171,6 +163,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
         return fetchedData
     }
 
